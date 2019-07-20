@@ -14,6 +14,60 @@ project 1 - A Random Quote Generator
   Add the `year` property to at least one object in the array.
   Use console.log() to log your array of quotes to the console.
 ***/
+let quotes =[{quote:"The No. 1 reason people fail in life is because they listen to their friends, family, and neighbors", source : "Napoleon Hill",year: " 1970"},
+             
+              {quote:"Don’t think. Thinking is the enemy of creativity. It’s self-conscious, and anything self-conscious is lousy. You can’t try to do things. You simply must do things", source : "Ray Bradbury" ,citation : "Google "},
+             
+              {quote:"Just Do it ",source : " NIKE"},
+              
+             {quote:"The worst things in life come free to us", source : "ED Sheeran"},
+             
+              {quote:"Do exactly as you like. That is the true meaning of pleasure. Pleasure leads to joy and joy leads to happiness. ", source : "ABCD"
+              }];
+
+console.log(quotes);
+
+
+function getRandomQuote(){
+ let randomnum = Math.floor(Math.random() * quotes.length);
+ return quotes[randomnum];
+}
+
+console.log(getRandomQuote());
+
+
+
+
+
+function  printQuote(){
+ let randomQuote =getRandomQuote();
+  let message ='';
+  message = "<p class='quote'>" +randomQuote.quote + "</p>";
+message += "<p class='source'>" + randomQuote.source;
+  if (randomQuote.citation !== undefined){
+    message += '<span class="citation">' + randomQuote.citation + '</span>';
+  }
+  if (randomQuote.year !== undefined){
+   message += '<span class="year">' + randomQuote.year + '</span>';
+  }
+    message += '</p>';
+let quoteDiv = document.getElementById('quote-box');
+  quoteDiv.innerHTMl = message;
+  }
+
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+
+
+ 
+
+  
+  
+
+
+
+
+  
 
 
 
@@ -50,7 +104,6 @@ project 1 - A Random Quote Generator
   comment.
 ***/
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
+// Remember to delete the comments that came with this file, and replace them with your own code comments
